@@ -18,4 +18,15 @@ for (let cal of text.split("\n\n")) {
   }
 }
 
-console.log(cals[0] + cals[1] + cals[2]);
+/*
+let cals = text.split("\n\n").map((cals) =>
+  cals
+    .split("\n")
+    .map((c) => parseInt(c, 10))
+    .reduce((acc, el) => acc + el)
+);
+
+cals.sort((a, b) => b - a);
+*/
+
+console.log(cals.slice(0, 3).reduce((acc, c) => acc + c));
