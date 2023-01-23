@@ -42,5 +42,5 @@ func toInt(s string) int {
 }
 
 func isSubset(x1,x2,y1,y2 int) bool {
-	return x1 <= y1 && x2 >= y2 || y1 <= x1 && y2 >= x2
+	return x1 >= y1 && x2 <= y2 || y1 >= x1 && y2 <= x2
 }
