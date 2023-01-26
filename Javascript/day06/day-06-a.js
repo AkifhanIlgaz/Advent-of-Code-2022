@@ -2,15 +2,15 @@ const fs = require("fs");
 
 const input = fs.readFileSync("./input.txt", "utf8");
 
-findFirstStartOfPacketMarker(input);
+FirstStartOfPacketMarker(input, 4);
 
-function findFirstStartOfPacketMarker(dataStream) {
-  let chunks = windows(dataStream, 4);
+function FirstStartOfPacketMarker(dataStream, numOfDistinctChars) {
+  let chunks = windows(dataStream, numOfDistinctChars);
 
   for (let i = 0; i < chunks.length; i++) {
     const chunk = chunks[i];
-    if (isAllUnique(chunk)) {
-      console.log(i + 4);
+    if (isAllUnique(chunk, numOfDistinctChars)) {
+      console.log(i + numOfDistinctChars);
       break;
     }
   }
@@ -37,7 +37,7 @@ function windows(input, windowSize) {
  * @param {string} chunk
  * @returns {boolean}
  */
-function isAllUnique(chunk) {
+function isAllUnique(chunk, numOfDistinctChars) {
   let uniqueChars = [];
 
   for (let ch of chunk) {
@@ -46,5 +46,5 @@ function isAllUnique(chunk) {
     }
   }
 
-  return uniqueChars.length == 4;
+  return uniqueChars.length == numOfDistinctChars;
 }
