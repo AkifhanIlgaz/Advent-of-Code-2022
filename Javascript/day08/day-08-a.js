@@ -61,5 +61,5 @@ for (let i = 0; i < grid.length; i++) {
     }
   }
 }
-console.log(grid);
+
 console.log(count);
