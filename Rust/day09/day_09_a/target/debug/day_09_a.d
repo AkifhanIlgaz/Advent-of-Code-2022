@@ -1,1 +1,0 @@
-/home/zozak/workspace/github.com/AkifhanIlgaz/Advent-of-Code-2022/Rust/day09/day_09_a/target/debug/day_09_a: /home/zozak/workspace/github.com/AkifhanIlgaz/Advent-of-Code-2022/Rust/day09/day_09_a/src/main.rs
