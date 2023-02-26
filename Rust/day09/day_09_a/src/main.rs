@@ -52,14 +52,14 @@ impl Grid {
             if self.head.y > self.tail.y {
                 while !self.is_touching() {
                     self.tail.r#move("U");
-                    self.visited_positions.insert(self.tail.clone());
                 }
             } else {
                 while !self.is_touching() {
                     self.tail.r#move("D");
-                    self.visited_positions.insert(self.tail.clone());
                 }
             }
+
+            self.visited_positions.insert(self.tail.clone());
         }
 
         // horizontal
@@ -67,14 +67,13 @@ impl Grid {
             if self.head.x > self.tail.x {
                 while !self.is_touching() {
                     self.tail.r#move("R");
-                    self.visited_positions.insert(self.tail.clone());
                 }
             } else {
                 while !self.is_touching() {
                     self.tail.r#move("L");
-                    self.visited_positions.insert(self.tail.clone());
                 }
             }
+            self.visited_positions.insert(self.tail.clone());
         }
 
         // move diagonal
